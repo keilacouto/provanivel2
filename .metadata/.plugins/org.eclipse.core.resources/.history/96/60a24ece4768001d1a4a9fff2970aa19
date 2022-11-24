@@ -1,9 +1,0 @@
-package com.keilacouto.provanivel2.exceptions;
-
-public class EmployeeNotFoundException extends RuntimeException {
-
-    public EmployeeNotFoundException(String exception) {
-        super(exception);
-    }
-
-}

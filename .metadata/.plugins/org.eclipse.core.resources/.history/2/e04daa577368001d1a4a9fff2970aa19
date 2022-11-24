@@ -1,2 +1,0 @@
-# Executar docker com postgresql+pgadmin
-sudo docker-compose up

@@ -1,8 +1,0 @@
-package com.keilacouto.provanivel2.enums;
-
-public class Snippet {
-	public static void main(String[] args) {
-		Tipo
-	}
-}
-

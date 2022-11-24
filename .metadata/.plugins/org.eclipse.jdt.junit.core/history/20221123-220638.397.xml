@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="ProdutoServiceTest.should_delete_one_produto" project="vendas" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.keilacouto.provanivel2.ProdutoServiceTest" time="1.341" displayname="ProdutoServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.keilacouto.provanivel2.ProdutoServiceTest]">
-    <testcase name="should_delete_one_produto" classname="com.keilacouto.provanivel2.ProdutoServiceTest" time="1.341" displayname="should_delete_one_produto()" uniqueid="[engine:junit-jupiter]/[class:com.keilacouto.provanivel2.ProdutoServiceTest]/[method:should_delete_one_produto()]"/>
-  </testsuite>
-</testrun>

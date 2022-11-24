@@ -41,10 +41,7 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="com.keilacouto.provanivel2.service.ProdutoService"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
-    <fullyQualifiedTypeName name="com.keilacouto.provanivel2.model.ItemPedido"/>
-    <fullyQualifiedTypeName name="org.mockito.Mock"/>
     <fullyQualifiedTypeName name="com.keilacouto.provanivel2.repositories.PedidoRepository"/>
     <fullyQualifiedTypeName name="com.keilacouto.provanivel2.service.PedidoService"/>
     <fullyQualifiedTypeName name="com.keilacouto.provanivel2.service.impl.PedidoServiceImpl"/>
@@ -56,4 +53,7 @@
     <fullyQualifiedTypeName name="com.keilacouto.provanivel2.enums.EnumStatusProduto"/>
     <fullyQualifiedTypeName name="com.keilacouto.provanivel2.enums.EnumTipoProduto"/>
     <fullyQualifiedTypeName name="com.keilacouto.provanivel2.exceptions.ProdutoNotFoundException"/>
+    <fullyQualifiedTypeName name="org.mockito.Mock"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.keilacouto.provanivel2.model.ItemPedido"/>
 </qualifiedTypeNameHistroy>

@@ -1,5 +1,0 @@
-package com.keilacouto.provanivel2.repositories;
-
-public interface EmployeeRepository {
-
-}
