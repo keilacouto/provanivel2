@@ -1,0 +1,23 @@
+package com.keilacouto.provanivel2.service;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import com.keilacouto.provanivel2.model.Employee;
+
+public interface ItemPedidoService {
+
+	Employee save(Employee entity);
+ 
+    List<Employee> findAll();
+ 
+    Employee update(Employee entity,Long id);
+ 
+    void deleteById(Long id);
+
+	Employee findById(Long id);
+
+	Page<Employee> findAll(Pageable pageable);
+}

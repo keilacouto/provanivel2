@@ -1,0 +1,13 @@
+# Heading level 1
+
+
+```
+curl --location --request POST 'http://localhost:8080/api/produto' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "descricao":"produto 3",
+    "valorUnitario": 150.0,
+    "tipo": "PRODUTO",
+    "status":"ATIVO"
+}'
+```

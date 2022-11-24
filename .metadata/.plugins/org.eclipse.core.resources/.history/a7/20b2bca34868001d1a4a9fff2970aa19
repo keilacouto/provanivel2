@@ -1,0 +1,5 @@
+package com.keilacouto.provanivel2.service;
+
+public class EmpoyeeServiceImpl implements EmployeetService{
+
+}

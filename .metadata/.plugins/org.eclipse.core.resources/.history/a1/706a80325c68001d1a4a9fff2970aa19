@@ -1,0 +1,74 @@
+package com.keilacouto.provanivel2.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.keilacouto.provanivel2.exceptions.ItemPedidoNotFoundException;
+import com.keilacouto.provanivel2.model.ItemPedido;
+import com.keilacouto.provanivel2.repositories.ItemPedidoRepository;
+import com.keilacouto.provanivel2.service.ItemPedidoService;
+
+@Service
+public class ItemPedidoServiceImpl implements ItemPedidoService{
+	
+	@Autowired 
+    private ItemPedidoRepository repository;
+	
+	@Override
+	public ItemPedido save(ItemPedido entity) {
+		return repository.save(entity);
+	}
+
+	@Override
+	public List<ItemPedido> findAll() {
+		 return repository.findAll();
+	}
+	
+	@Override
+	public Page<ItemPedido> findAll(Pageable pageable) {
+		return repository.findAll(pageable);
+	}
+	
+	@Override
+	public ItemPedido findById(Long id) {
+		Optional<ItemPedido> entity = repository.findById(id);
+
+        if (entity.isEmpty())
+            throw new ItemPedidoNotFoundException("id-" + id);
+
+        return entity.get();
+			
+	}
+
+	@Override
+	public ItemPedido update(ItemPedido entity, Long id) {
+		Optional<ItemPedido> entityOptional = repository.findById(id);
+
+        if (entityOptional.isEmpty())
+        	throw new ItemPedidoNotFoundException("id-" + id);
+
+        entity.setId(id);
+
+        repository.save(entity);
+        
+        return entity;
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		Optional<ItemPedido> entity = repository.findById(id);
+
+        if (entity.isEmpty())
+            throw new ItemPedidoNotFoundException("id-" + id);
+        
+		repository.deleteById(id);		
+	}
+
+	
+
+}

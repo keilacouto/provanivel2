@@ -1,0 +1,11 @@
+package com.keilacouto.provanivel2.exceptions;
+
+public class ItemPedidoValidaStatusException extends RuntimeException {
+
+	private static final long serialVersionUID = 1L;
+
+	public ItemPedidoValidaStatusException(String exception) {
+        super(exception);
+    }
+
+}

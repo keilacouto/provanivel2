@@ -1,0 +1,111 @@
+package com.keilacouto.provanivel2.service.impl;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.keilacouto.provanivel2.enums.EnumStatusPedido;
+import com.keilacouto.provanivel2.enums.EnumStatusProduto;
+import com.keilacouto.provanivel2.enums.EnumTipoProduto;
+import com.keilacouto.provanivel2.exceptions.ItemPedidoNotFoundException;
+import com.keilacouto.provanivel2.model.ItemPedido;
+import com.keilacouto.provanivel2.model.Pedido;
+import com.keilacouto.provanivel2.model.Produto;
+import com.keilacouto.provanivel2.repositories.ItemPedidoRepository;
+import com.keilacouto.provanivel2.service.ItemPedidoService;
+
+@Service
+public class ItemPedidoServiceImpl implements ItemPedidoService {
+
+	@Autowired
+	private ItemPedidoRepository repository;
+
+	@Override
+	public ItemPedido save(ItemPedido entity) throws Exception {
+		
+		Pedido pedido = entity.getPedido();		
+		Produto produto = entity.getProduto();
+		
+		validaStatusInativoProduto(produto);		
+		
+		BigDecimal valorLiquido = BigDecimal.ZERO;
+		BigDecimal valorBruto = BigDecimal.ZERO;
+		
+		
+		valorBruto = produto.getValorUnitario().multiply(new BigDecimal(entity.getQuantidade()));	
+		
+		if (pedido.getStatus().getDescricao().equals(EnumStatusPedido.ABERTO.getDescricao()) 
+				&& produto.getTipo().getDescricao().equals(EnumTipoProduto.PRODUTO.getDescricao())) {
+			BigDecimal percentualDesconto = entity.getPercentualDesconto();
+						
+			valorLiquido = valorBruto.multiply(percentualDesconto).divide(new BigDecimal(100));
+		} else {
+			valorLiquido = valorBruto;
+		}
+		
+		entity.setValorBruto(valorBruto);
+		entity.setValorLiquido(valorLiquido);
+		
+		return repository.save(entity);
+	}
+	
+	@Override
+	public List<ItemPedido> findAll() {
+		return repository.findAll();
+	}
+
+	@Override
+	public Page<ItemPedido> findAll(Pageable pageable) {
+		return repository.findAll(pageable);
+	}
+
+	@Override
+	public ItemPedido findById(Long id) {
+		Optional<ItemPedido> entity = repository.findById(id);
+
+		if (entity.isEmpty()) {
+			throw new ItemPedidoNotFoundException("id-" + id);
+		}
+
+		return entity.get();
+
+	}
+
+	@Override
+	public ItemPedido update(ItemPedido entity, Long id) {
+		Optional<ItemPedido> entityOptional = repository.findById(id);
+
+		if (entityOptional.isEmpty()) {
+			throw new ItemPedidoNotFoundException("id-" + id);
+		}
+
+		entity.setId(id);
+
+		repository.save(entity);
+
+		return entity;
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		Optional<ItemPedido> entity = repository.findById(id);
+
+		if (entity.isEmpty()) {
+			throw new ItemPedidoNotFoundException("id-" + id);
+		}
+
+		repository.deleteById(id);
+	}
+	
+	private void validaStatusInativoProduto(Produto produto) {
+		if (produto.getStatus().getDescricao().equals(EnumStatusProduto.INATIVO.getDescricao())) {
+			throw new RuntimeException("Não é possível adicionar o produto, pois o mesmo encontra-se com status Inativo.");
+		}
+	}
+
+}

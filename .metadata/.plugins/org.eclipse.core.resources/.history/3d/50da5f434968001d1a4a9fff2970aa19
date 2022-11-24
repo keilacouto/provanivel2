@@ -1,0 +1,80 @@
+package com.keilacouto.provanivel2.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.keilacouto.provanivel2.exceptions.EmployeeNotFoundException;
+import com.keilacouto.provanivel2.model.Employee;
+import com.keilacouto.provanivel2.repositories.EmployeeRepository;
+import com.keilacouto.provanivel2.service.EmployeetService;
+
+@RestController
+public class EmployeeController {
+
+	@Autowired 
+	private EmployeetService service;
+
+	@GetMapping("/employes")
+    public List<Employee> retrieveAllStudents() {
+        return service.findAll();
+    }
+	
+	@GetMapping("/listPageable")
+	Page<Employee> employeesPageable(Pageable pageable) {
+		return service.findAll(pageable);
+	}
+	
+	@GetMapping("/students/{id}")
+    public Employee retrieveStudent(@PathVariable long id) {
+        Optional<Employee> student = service.findById(id);
+
+        if (student.isEmpty())
+            throw new EmployeeNotFoundException("id-" + id);
+
+        return student.get();
+    }
+	
+	@DeleteMapping("/students/{id}")
+    public void deleteStudent(@PathVariable long id) {
+		service.deleteById(id);
+    }
+
+    @PostMapping("/students")
+    public ResponseEntity<Object> createStudent(@RequestBody Employee employee) {
+    	Employee savedEmployee = service.save(employee);
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(savedStudent.getId()).toUri();
+
+        return ResponseEntity.created(location).build();
+
+    }
+
+    @PutMapping("/students/{id}")
+    public ResponseEntity<Object> updateStudent(@RequestBody Employee employee, @PathVariable long id) {
+
+        Optional<Employee> studentOptional = service.findById(id);
+
+        if (studentOptional.isEmpty())
+            return ResponseEntity.notFound().build();
+
+        employee.setId(id);
+
+        service.save(employee);
+
+        return ResponseEntity.noContent().build();
+    }
+	
+
+}

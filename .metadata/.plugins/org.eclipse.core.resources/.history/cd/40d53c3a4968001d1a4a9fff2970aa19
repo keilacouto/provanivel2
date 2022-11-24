@@ -1,0 +1,16 @@
+package com.keilacouto.provanivel2.service;
+
+import java.util.List;
+
+import com.keilacouto.provanivel2.model.Employee;
+
+public interface EmployeetService {
+
+	Employee save(Employee entity);
+ 
+    List<Employee> fetchAll();
+ 
+    Employee update(Employee entity,Long id);
+ 
+    void deleteById(Long id);
+}

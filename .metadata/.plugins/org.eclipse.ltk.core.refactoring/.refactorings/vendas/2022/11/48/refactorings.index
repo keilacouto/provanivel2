@@ -1,0 +1,41 @@
+1668903721935	Copy compilation unit
+1668911348548	Rename field 'service'
+1668911364338	Rename field 'servicePedido'
+1668912138251	Delete element
+1668912157861	Copy compilation unit
+1668912411748	Delete element
+1668912468791	Copy compilation unit
+1668912618732	Rename field 'ItemPedidoService'
+1668913035774	Extract local variable 'produto'
+1668914100075	Extract method 'extracted'
+1668917715888	Rename method 'validaStatusProduto'
+1668940424022	Extract method 'calcularValorLiquido'
+1668940486088	Extract method 'calcularValorBruto'
+1668954531523	Copy compilation unit
+1668954750964	Extract method 'extracted'
+1668956818546	Rename field 'repository'
+1668957215776	Copy compilation unit
+1668959896833	Rename local variable 'pedidos'
+1668959921171	Rename local variable 'produtos'
+1668959948965	Rename local variable 'itensPedido'
+1668959958559	Rename local variable 'pd'
+1668959967634	Rename local variable 'p'
+1668959978251	Rename local variable 'i'
+1668971811336	Rename field 'repository'
+1668973918028	Rename compilation unit 'sdsdf.java'
+1668982899049	Extract local variable 'savedItem'
+1668984185133	Rename type 'EmpoyeeServiceImpl'
+1668992214972	Delete element
+1668992239939	Copy compilation unit
+1668992255917	Copy compilation unit
+1668992271094	Copy compilation unit
+1668992631909	Rename field 'service'
+1669172182680	Delete element
+1669172735700	Extract local variable 'dataPedido'
+1669175280878	Extract local variable 'dataPedido'
+1669176859408	Rename local variable 'entity'
+1669176874650	Rename field 'repository'
+1669176905931	Rename field 'service'
+1669176924257	Rename local variable 'entity'
+1669252269679	Rename local variable 'id'
+1669255609724	Delete element

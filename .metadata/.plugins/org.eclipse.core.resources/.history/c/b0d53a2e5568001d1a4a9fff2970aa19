@@ -1,0 +1,5 @@
+package com.keilacouto.provanivel2.enums;
+
+public enum EnumTipo {
+
+}

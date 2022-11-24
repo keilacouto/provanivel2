@@ -1,0 +1,94 @@
+package com.keilacouto.provanivel2.model;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "pedido")
+public class Pedido {
+
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	private long id;
+
+	// private Long numero;
+
+	@Column(name = "data_pedido")
+	private LocalDate dataPedido;
+
+	@Column(name = "valor_total_bruto")
+	private BigDecimal valorTotalBruto;
+
+	@Column(name = "valor_total_liquido")
+	private BigDecimal valorTotalLiquido;
+
+	@Column(name = "status")
+	private String status;
+//	
+//	@OneToMany(mappedBy = "pedido")
+//	private List<ItemPedido> itensPedido;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public LocalDate getDataPedido() {
+		return dataPedido;
+	}
+
+	public void setDataPedido(LocalDate dataPedido) {
+		this.dataPedido = dataPedido;
+	}
+
+	public BigDecimal getValorTotalBruto() {
+		return valorTotalBruto;
+	}
+
+	public void setValorTotalBruto(BigDecimal valorTotalBruto) {
+		this.valorTotalBruto = valorTotalBruto;
+	}
+
+	public BigDecimal getValorTotalLiquido() {
+		return valorTotalLiquido;
+	}
+
+	public void setValorTotalLiquido(BigDecimal valorTotalLiquido) {
+		this.valorTotalLiquido = valorTotalLiquido;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+//	public List<ItemPedido> getItensPedido() {
+//		return itensPedido;
+//	}
+//	
+//	public void setItensPedido(List<ItemPedido> itensPedido) {
+//		this.itensPedido = itensPedido;
+//	}
+
+	@Override
+	public String toString() {
+		return "Pedido [id=" + id + ", dataPedido=" + dataPedido + ", valorTotalBruto=" + valorTotalBruto
+				+ ", valorTotalLiquido=" + valorTotalLiquido + ", status=" + status + "]";
+	}
+
+}

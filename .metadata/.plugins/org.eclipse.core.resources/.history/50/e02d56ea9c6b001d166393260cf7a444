@@ -1,0 +1,3 @@
+# Executar docker com postgresql+pgadmin
+cd /Projetos/keila/teste/vendas
+sudo docker-compose up

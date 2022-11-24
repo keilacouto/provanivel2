@@ -1,0 +1,34 @@
+1668887565154	Delete element
+1668887631443	Rename package 'com.keilacouto.provanivel2.services'
+1668890980294	Rename type 'EmployeetService'
+1668891677800	Rename package 'com.keilacouto.provanivel2.controller'
+1668891708098	Rename package 'com.keilacouto.provanivel2.resource'
+1668894601890	Copy compilation unit
+1668894775517	Rename package 'enums'
+1668895057709	Rename compilation unit 'EnumTipo.java'
+1668895101732	Rename type 'Tipo'
+1668895235385	Copy compilation unit
+1668895241868	Delete element
+1668895303027	Rename type 'ProdutoServico'
+1668895475954	Copy compilation unit
+1668896186116	Copy compilation unit
+1668896960655	Copy compilation unit
+1668897008542	Copy compilation unit
+1668897046250	Copy compilation unit
+1668897116694	Rename type 'EnumTipo'
+1668897128795	Rename type 'EnumStatus'
+1668897140069	Copy compilation unit
+1668897227288	Copy compilation unit
+1668897247323	Copy compilation unit
+1668897262509	Copy compilation unit
+1668897277075	Copy compilation unit
+1668897288011	Copy compilation unit
+1668897302934	Copy compilation unit
+1668897473057	Move compilation unit
+1668897491118	Move compilation unit
+1668897498746	Move compilation unit
+1668897506213	Move compilation unit
+1668897702148	Copy compilation unit
+1668897821622	Copy compilation unit
+1668897842051	Copy compilation unit
+1668898043180	Rename type 'ItemPedidoProdutoNotFoundException'

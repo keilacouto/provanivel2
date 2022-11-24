@@ -1,0 +1,5 @@
+package com.keilacouto.provanivel2.exceptions;
+
+public class EmployeeNotFoundException {
+
+}

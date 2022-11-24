@@ -1,0 +1,20 @@
+package com.keilacouto.provanivel2;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.keilacouto.provanivel2.repositories.PedidoRepository;
+import com.keilacouto.provanivel2.service.PedidoService;
+
+@ExtendWith(MockitoExtension.class)
+public class PedidoServiceTest {
+	
+	@Mock
+	private PedidoRepository pedidoRepository;
+	
+	@InjectMocks
+    private PedidoService pedidoService;
+
+}

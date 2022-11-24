@@ -1,0 +1,17 @@
+package com.keilacouto.provanivel2.enums;
+
+public enum EnumTipo {
+
+	PRODUTO("Produto"),
+    SERVICO("Serviço");
+
+    private String descricao;
+
+    EnumTipo(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ProdutoServiceTest.should_not_delete_one_produto_when_produto_associado_itemPedido" project="vendas" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.keilacouto.provanivel2.ProdutoServiceTest" time="1.41" displayname="ProdutoServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.keilacouto.provanivel2.ProdutoServiceTest]">
+    <testcase name="should_not_delete_one_produto_when_produto_associado_itemPedido" classname="com.keilacouto.provanivel2.ProdutoServiceTest" time="1.41" displayname="should_not_delete_one_produto_when_produto_associado_itemPedido()" uniqueid="[engine:junit-jupiter]/[class:com.keilacouto.provanivel2.ProdutoServiceTest]/[method:should_not_delete_one_produto_when_produto_associado_itemPedido()]"/>
+  </testsuite>
+</testrun>

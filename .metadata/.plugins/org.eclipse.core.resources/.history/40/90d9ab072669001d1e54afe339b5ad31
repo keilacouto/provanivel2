@@ -1,0 +1,36 @@
+package com.keilacouto.provanivel2;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.keilacouto.provanivel2.repositories.EmployeeRepository;
+import com.keilacouto.provanivel2.service.impl.EmployeeServiceImpl;
+
+@ExtendWith(MockitoExtension.class)
+public class EmployeeServiceTest {
+
+	@Mock
+    private EmployeeRepository employeeRepository;
+
+    @InjectMocks
+    private EmployeeServiceImpl employeeService;
+    
+	@Test
+    void should_save_one_employee() {
+        // Arrange
+        final var studentToSave = Student.builder().name("Mary Jane").age(25).build();
+        when(repository.save(any(Student.class))).thenReturn(studentToSave);
+
+        // Act
+        final var actual = service.saveOneStudent(new Student());
+
+        // Assert
+        assertThat(actual).usingRecursiveComparison().isEqualTo(studentToSave);
+        verify(repository, times(1)).save(any(Student.class));
+        verifyNoMoreInteractions(repository);
+    }
+}

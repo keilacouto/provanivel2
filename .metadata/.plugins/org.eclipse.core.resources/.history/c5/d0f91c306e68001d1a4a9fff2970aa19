@@ -1,0 +1,2 @@
+--Executar docker com postgresql
+docker run --name pgsql-dev -e POSTGRES_PASSWORD=Welcome4$ -p 5432:5432 postgres
